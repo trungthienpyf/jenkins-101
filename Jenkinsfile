@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools{
-    maven 'my-maven'
+        maven 'my-maven'
     }
     stages {
         stage('Clone') {
@@ -11,11 +11,11 @@ pipeline {
             }
           }
         stage('Build') {
-                  steps {
-                    sh 'mvn --version'
-                    sh 'java --version'
-                    sh 'mvn clean package -Dmaven.test.failure.ignore=true'
-                  }
-                }
+              steps {
+                sh 'mvn --version'
+                sh 'java --version'
+                sh 'mvn clean package -Dmaven.test.failure.ignore=true'
+              }
+        }
     }
 }
