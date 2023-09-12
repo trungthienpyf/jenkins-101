@@ -166,7 +166,7 @@ public class TribeSDKServiceImpl implements TribeSDK {
         try {
             return mapper.convertValue(request, model);
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+
             throw new TribeException(ex.getMessage());
         }
     }
