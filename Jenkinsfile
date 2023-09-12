@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools{
+    maven 'my-maven'
+    }
     stages {
         stage('Clone') {
             steps {
@@ -7,5 +10,12 @@ pipeline {
                 git 'https://github.com/trungthienpyf/jenkins-101.git'
             }
           }
+        stage('Clone') {
+                  steps {
+                    sh 'mvn --version'
+                    sh 'java --version'
+                    sh 'mvn clean package -Dmaven.test.failure.ignore=true'
+                  }
+                }
     }
 }
