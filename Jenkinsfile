@@ -10,7 +10,7 @@ pipeline {
                 git 'https://github.com/trungthienpyf/jenkins-101.git'
             }
           }
-        stage('Clone') {
+        stage('Build') {
                   steps {
                     sh 'mvn --version'
                     sh 'java --version'
